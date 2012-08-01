@@ -4,6 +4,7 @@ title: "Interview Questions"
 date: 2012-02-21 07:51
 comments: true
 categories: 
+- interviews
 ---
 You should know the answer to all of these questions before going into an interview. They aren't difficult questions, but knowing the answers beforehand will certainly reduce stress while you're in the interview trying to come up with an answer.
 
