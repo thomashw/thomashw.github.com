@@ -4,6 +4,7 @@ title: "Stock Picks"
 date: 2012-07-31 18:43
 comments: true
 categories: stocks
+published: false
 ---
 If the markets do well tomorrow, here's a couple stock picks I like: BA (Boeing) and KR (Kinder Morgan Management).
 
