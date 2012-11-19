@@ -32,13 +32,9 @@ GEM
       kramdown (~> 0.13)
       liquid (~> 2.3)
       maruku (~> 0.5)
-<<<<<<< HEAD
     kramdown (0.13.6)
     kramdown (0.13.7)
     liquid (2.2.2)
-=======
-    kramdown (0.13.7)
->>>>>>> 2b67270f960563c55dd6c66495517bccc4f7fb17
     liquid (2.3.0)
     maruku (0.6.0)
       syntax (>= 1.0.0)
