@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://thomashw.github.com/blog/2012/02/21/interview-questions/</loc>
+        <lastmod>2012-11-18T17:34:14-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thomashw.github.com/blog/2012/08/24/steve-jobs/</loc>
+        <lastmod>2012-11-18T17:34:14-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thomashw.github.com/blog/2012/09/01/virtualbox-shared-folders/</loc>
+        <lastmod>2012-11-18T17:34:14-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://thomashw.github.com/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests/
+        </loc>
+        <lastmod>2012-11-18T17:34:14-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thomashw.github.com/blog/2012/11/18/microsoft-exchangenge-ios-settings/</loc>
+        <lastmod>2012-11-18T17:38:23-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thomashw.github.com/blog/archives/</loc>
+        <lastmod>2012-11-18T17:38:23-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thomashw.github.com/</loc>
+        <lastmod>2012-11-18T17:38:23-07:00</lastmod>
+    </url>
+</urlset>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ios | thomashw]]></title>
+  <link href="http://thomashw.github.com/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://thomashw.github.com/"/>
+  <updated>2012-11-18T17:38:38-07:00</updated>
+  <id>http://thomashw.github.com/</id>
+  <author>
+    <name><![CDATA[Thomas Hewton-Waters]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Microsoft Exchangenge iOS Settings]]></title>
+    <link href="http://thomashw.github.com/blog/2012/11/18/microsoft-exchangenge-ios-settings/"/>
+    <updated>2012-11-18T17:36:00-07:00</updated>
+    <id>http://thomashw.github.com/blog/2012/11/18/microsoft-exchangenge-ios-settings</id>
+    <content type="html"><![CDATA[<p>My company doesn’t officially support adding a Microsoft Exchange email/calendar account to your iOS device unless you install a certain application and certificate. I didn’t want to do this since it enables them to do a lot more than just enable email on my phone.</p>
+
+<p>We have Microsoft Exchange webmail accessible from anywhere so I eventually figured out the correct settings to use from the webmail URL to add a Microsoft Exchange account to my iOS devices that pushes my work email, address book, and calendar.</p>
+
+<p>Once I log in, our webmail URL looks something like this: https://subdomain.domain.com/owa</p>
+
+<p>The settings I used to add the Microsoft Exchange account to my iOS devices were:
+Server: subdomain.domain.com
+Domain: domain
+Username: same username as logging in to webmail (no domain required)
+Password: same password
+Use SSL: On</p>
+
+<p>Once I used those settings and clicked Done checkmarks appeared beside each form field and then the account was added. It took maybe 5-10 minutes before I could access my email and calendar (I got a couple error messages during that time). I think it was while emails were being downloaded.</p>
+]]></content>
+  </entry>
+  
+</feed>
