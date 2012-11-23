@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Category: Steve Jobs - thomashw</title>
+	<title>MySQL MEMORY Tables - thomashw</title>
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="Category: Steve Jobs">
+	<meta name="description" content="I&#8217;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down after I learn something has &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -85,130 +85,70 @@
 	})(jQuery);
 </script>
 
-	<div id="content" class="inner">
-	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">MySQL MEMORY Tables</h1>
+	<div class="entry-content"><p>I&#8217;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
+
+<p>A memory table can be created in MySQL using the ENGINE table option:</p>
+
+<pre><code>CREATE TABLE t (i INT) ENGINE = MEMORY;
+</code></pre>
+
+<p>TYPE = HEAP is an older way of specifying the same thing and is still supported for backwards compatibility. Memory tables use hash indexes by default so they’re very fast, and useful for creating temporary tables. When the server shuts down, the tables lose all of their values since they’re stored in memory, but the table definitions aren’t lost since they’re stored in .frm files on disk. These tables will exist when the server restarts but will be empty.</p>
+
+<ul>
+<li>These tables can have up to 64 indexes per table, with 16 columns per index and a maximum key length of 3072 bytes.</li>
+<li>They cannot contain BLOB or TEXT columns.</li>
+<li>The maximum size of a MEMORY table is dependent on the <code>max_heap_table_size</code> system variable, which is by default 16MB. In order to create MEMORY tables of different sizes this variable’s value must be changed. It’s best to change the session value of this variable instead of the global value, unless you want the value to be changed for all clients.</li>
+<li>Memory is not reclaimed when individual rows are deleted from MEMORY tables. It’s only reclaimed when the entire table is deleted.</li>
+</ul>
+
+</div>
 
 
-	
-	
-	<section class="archives"><h1 class="year">2012</h1>
+<div class="meta">
+	<div class="date">
 
-<article>
-	<h1 class="title"><a href="/blog/2012/11/22/mysql-memory-tables/">MySQL MEMORY Tables</a></h1>
-	<div class="meta">
-		<span class="date">Nov 22</span>
-		<span class="tags">
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-22T18:41:00-07:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2012</time></div>
+	<div class="tags">
 
 
 	<a class='category' href='/blog/categories/mysql/'>mysql</a>
 
 
-</span>
-	    
-	    <span class="comments"><a href="/blog/2012/11/22/mysql-memory-tables/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
+</div>
 	
-
-
-<article>
-	<h1 class="title"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings/">Microsoft Exchangenge iOS Settings</a></h1>
-	<div class="meta">
-		<span class="date">Nov 18</span>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/email/'>email</a>, <a class='category' href='/blog/categories/exchange/'>exchange</a>, <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
+		<span class="comments"><a href="/blog/2012/11/22/mysql-memory-tables/#disqus_thread">Comments</a></span>
 	
-
-
-<article>
-	<h1 class="title"><a href="/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests/">RP-PPPoE &amp; pppd - LCP: timeout sending Config-Requests</a></h1>
-	<div class="meta">
-		<span class="date">Sep  6</span>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/pppoe/'>pppoe</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
+</div></article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 	
-
-
-<article>
-	<h1 class="title"><a href="/blog/2012/09/01/virtualbox-shared-folders/">VirtualBox Shared Folders</a></h1>
-	<div class="meta">
-		<span class="date">Sep  1</span>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/virtualbox/'>virtualbox</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2012/09/01/virtualbox-shared-folders/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
 	
-
-
-<article>
-	<h1 class="title"><a href="/blog/2012/08/24/steve-jobs/">Steve Jobs</a></h1>
-	<div class="meta">
-		<span class="date">Aug 24</span>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/steve-jobs/'>Steve Jobs</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2012/08/24/steve-jobs/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
+	<a class="addthis_button_tweet"></a>
 	
-
-
-<article>
-	<h1 class="title"><a href="/blog/2012/02/21/interview-questions/">Interview Questions</a></h1>
-	<div class="meta">
-		<span class="date">Feb 21</span>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/interviews/'>interviews</a>
-
-
-</span>
-	    
-	    <span class="comments"><a href="/blog/2012/02/21/interview-questions/#disqus_thread">Comments</a></span>
-	    
+	
+	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-</article>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2012
 
@@ -228,7 +168,10 @@
       var disqus_shortname = 'thomashw';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables/';
+        var disqus_url = 'http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
