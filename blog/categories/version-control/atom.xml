@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: version control | thomashw]]></title>
+  <link href="http://thomashw.github.com/blog/categories/version-control/atom.xml" rel="self"/>
+  <link href="http://thomashw.github.com/"/>
+  <updated>2012-12-02T21:30:58-07:00</updated>
+  <id>http://thomashw.github.com/</id>
+  <author>
+    <name><![CDATA[Thomas Hewton-Waters]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Commit Messages]]></title>
+    <link href="http://thomashw.github.com/blog/2012/12/02/commit-messages/"/>
+    <updated>2012-12-02T21:25:00-07:00</updated>
+    <id>http://thomashw.github.com/blog/2012/12/02/commit-messages</id>
+    <content type="html"><![CDATA[<p>I get really frustrated when I see a commit message that doesn’t adequately explain what the author did and why he did it. Commit messages are really important. They’re the only source of information on why a change was made. If a change introduced a bug, a commit message can help explain why the author made that change, and will help shed some light on what functionality the author expected to change. This can be extremely helpful when trying to figure out what commit introduced that bug. You need to be able to use those commit messages (especially the header line) to quickly cross-reference the issue you’re seeing to help narrow down what change caused the issue.</p>
+
+<p>In addition, if you’re working with other developers on the same repository, your commit messages will help them understand what you’re working on and why you’re making the changes you’re making. Commit messages are a great way to share knowledge about the inner workings of a code base. Your own understanding of the code you wrote will never be better than when you’re writing its commit message (as long as you commit often!).</p>
+
+<p>Writing detailed commit messages can also help you review your own code. I can’t count how many times I was writing a commit message, and while going over the diff making sure I didn’t forget anything, I saw something I either didn’t mean to include (maybe a random debug log to figure out why something wasn’t working) or something I could refactor. Writing detailed commit messages has been extremely helpful in making my own code better by forcing me to review the changes before I committed.</p>
+
+<p>I really like the way Linus Torvalds writes commit messages. He always provides a lot of detail about what he’s doing and why. They’re an awesome source of information. Without his detailed commit messages, looking years back into the history of the Linux kernel at one of his commits you’d spend significantly more time figuring out why the change was made.</p>
+
+<p>Here’s an excerpt from one of his projects (subsurface) on what he expects in a commit message.</p>
+
+<pre><code>A good commit message looks like this:
+
+Header line: explaining the commit in one line
+
+Body of commit message is a few lines of text, explaining things
+in more detail, possibly giving some background about the issue
+being fixed, etc etc.
+
+The body of the commit message can be several paragraphs, and
+please do proper word-wrap and keep columns shorter than about
+74 characters or so. That way "git log" will show things
+nicely even when it's indented.
+
+Reported-by: whoever-reported-it
+Signed-off-by: Your Name &lt;youremail@yourhost.com&gt;
+
+where that header line really should be meaningful, and really should be
+just one line.  That header line is what is shown by tools like gitk and
+shortlog, and should summarize the change in one readable line of text,
+independently of the longer explanation.
+</code></pre>
+
+<p>Please, when writing a commit message, take the above advice and make the message meaningful.</p>
+
+<p>Another rule you need to follow is to commit often. Commit every time you make a change that you could possibly want to roll back in the future. These changes can be big or small, but should only ever be one “thing”. If you renamed a class, make a commit. If you refactored a method in that class to make it faster, make a commit. Why can’t you commit the renaming of the class and the refactored method in the same commit? What if you later found out the refactoring of that method introduced a bug? Rolling back that commit will not only revert the changes you made to the method but will also change the name of the class back to its old name! That’s not something we want. Now we have to change the name of the class back to its new name after reverting the commit.</p>
+
+<p>That’s a simple example, but if you keep your commits to one “thing” you’ll save yourself the headache of having to re-implement changes after reverting a commit that included multiple changes.</p>
+]]></content>
+  </entry>
+  
+</feed>
