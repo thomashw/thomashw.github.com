@@ -7,7 +7,7 @@
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="Paul Graham has a ton of great essays on his website to do with startups, programming, and being an entrepreneur. I&#8217;ve read quite a few of &hellip;">
+	<meta name="description" content="When NZBMatrix was shut down I eventually came upon Newznab and installed it on my local server. After enabling a few groups I ran update_binaries. &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,6 +86,52 @@
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/12/16/newznab-release-issue/">Newznab Release Issue</a></h1>
+	<div class="entry-content">
+		<p>When NZBMatrix was shut down I eventually came upon Newznab and installed it on my local server. After enabling a few groups I ran update_binaries.php and it seemed like it was working, but when I ran update_releases.php after update_binaries.php had finished it didn’t create any releases. The issue is the regex’s (or lack of) that come with the free version of Newznab. One easy fix for this is to donate to the project and get Newznab+. This includes the most up-to-date regex’s.</p>
+
+<p>If you want to just try out Newznab and want to get some releases on your site before you donate, you can do the following (this is a Linux example):</p>
+
+<pre><code>cd /tmp
+wget https://raw.github.com/kop1/newznab/master/db/latestregex.sql
+mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
+</code></pre>
+
+<p>That will update your regex&#8217;s so update_releases.php will create some releases. If you&#8217;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&#8217;re directly supporting the people who work on it.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-16T10:46:00-07:00" pubdate data-updated="true">Dec 16<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/newznab/'>newznab</a>, <a class='category' href='/blog/categories/usenet/'>usenet</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/12/16/newznab-release-issue//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
