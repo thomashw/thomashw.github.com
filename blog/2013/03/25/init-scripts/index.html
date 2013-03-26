@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Interview Questions - thomashw</title>
+	<title>init scripts - thomashw</title>
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="You should know the answer to all of these questions before going into an interview. They aren&#8217;t difficult questions, but knowing the answers &hellip;">
+	<meta name="description" content="When creating an init script, make sure the lock file it creates in /var/lock/subsys has the same filename as the init script. When switching run &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,28 +86,10 @@
 </script>
 
 	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Interview Questions</h1>
-	<div class="entry-content"><p>You should know the answer to all of these questions before going into an interview. They aren&#8217;t difficult questions, but knowing the answers beforehand will certainly reduce stress while you&#8217;re in the interview trying to come up with an answer.</p>
+	<h1 class="title">Init Scripts</h1>
+	<div class="entry-content"><p>When creating an init script, make sure the lock file it creates in <code>/var/lock/subsys</code> has the same filename as the init script. When switching run levels the rc scripts check for the existence of a file in <code>/var/lock/subsys</code> with the same name as the script, so if the lock file has a different name than the script the service won’t start/stop correctly even if there are start and kill symbolic links in the /etc/rc*.d directories.</p>
 
-<ol>
-<li>Why do you want to work for us?</li>
-<li>How do you think you could contribute to our company?</li>
-<li>What kind of work do you like best?</li>
-<li>Do you work well with others?</li>
-<li>What are your hobbies?</li>
-<li>What would you like to do when you graduate?</li>
-<li>Are you good at taking direction?</li>
-<li>Are you good at giving direction?</li>
-<li>Are you good at multitasking, or do you prefer to focus on one thing?</li>
-<li>Do you like to be busy?</li>
-<li>What would you like to learn if you worked for us?</li>
-<li>What do you do in your spare time?</li>
-<li>What would you do if you disagreed with your boss?</li>
-<li>What would you do if you had a conflict with a co-worker?</li>
-<li>Are you comfortable talking about your ideas?</li>
-<li>Are you comfortable talking in front of a group?</li>
-</ol>
-
+<p>I recently created an init script that used a different name for its lock file and it took me quite a while to figure out the issue. Oops.</p>
 </div>
 
 
@@ -124,16 +106,12 @@
   
 
 
-<time datetime="2012-02-21T07:51:00-07:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time></div>
+<time datetime="2013-03-25T19:26:00-06:00" pubdate data-updated="true">Mar 25<span>th</span>, 2013</time></div>
 	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/interviews/'>interviews</a>
-
 
 </div>
 	
-		<span class="comments"><a href="/blog/2012/02/21/interview-questions/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2013/03/25/init-scripts/#disqus_thread">Comments</a></span>
 	
 </div></article>
 <div class="share">
@@ -174,8 +152,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://thomashw.github.com/blog/2012/02/21/interview-questions/';
-        var disqus_url = 'http://thomashw.github.com/blog/2012/02/21/interview-questions/';
+        var disqus_identifier = 'http://thomashw.github.com/blog/2013/03/25/init-scripts/';
+        var disqus_url = 'http://thomashw.github.com/blog/2013/03/25/init-scripts/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -7,7 +7,7 @@
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="When NZBMatrix was shut down I eventually came upon Newznab and installed it on my local server. After enabling a few groups I ran update_binaries. &hellip;">
+	<meta name="description" content="When creating an init script, make sure the lock file it creates in /var/lock/subsys has the same filename as the init script. When switching run &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,6 +86,41 @@
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/03/25/init-scripts/">Init Scripts</a></h1>
+	<div class="entry-content">
+		<p>When creating an init script, make sure the lock file it creates in <code>/var/lock/subsys</code> has the same filename as the init script. When switching run levels the rc scripts check for the existence of a file in <code>/var/lock/subsys</code> with the same name as the script, so if the lock file has a different name than the script the service won’t start/stop correctly even if there are start and kill symbolic links in the /etc/rc*.d directories.</p>
+
+<p>I recently created an init script that used a different name for its lock file and it took me quite a while to figure out the issue. Oops.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-25T19:26:00-06:00" pubdate data-updated="true">Mar 25<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/03/25/init-scripts//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -621,7 +656,7 @@ cd /media/cdrom
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     Thomas Hewton-Waters
 
