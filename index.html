@@ -1,0 +1,703 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>thomashw</title>
+	<meta name="author" content="Thomas Hewton-Waters">
+
+	
+	<meta name="description" content="When creating an init script, make sure the lock file it creates in /var/lock/subsys has the same filename as the init script. When switching run &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="thomashw" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">thomashw</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:thomashw.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/thomashw" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/thomashw" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:thomashw.github.com">
+	</form>
+</nav>
+
+</header>
+	
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/thomashw">thomashw</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('thomashw', 4, false);
+	})(jQuery);
+</script>
+
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/03/25/init-scripts/">Init Scripts</a></h1>
+	<div class="entry-content">
+		<p>When creating an init script, make sure the lock file it creates in <code>/var/lock/subsys</code> has the same filename as the init script. When switching run levels the rc scripts check for the existence of a file in <code>/var/lock/subsys</code> with the same name as the script, so if the lock file has a different name than the script the service won’t start/stop correctly even if there are start and kill symbolic links in the /etc/rc*.d directories.</p>
+
+<p>I recently created an init script that used a different name for its lock file and it took me quite a while to figure out the issue. Oops.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-25T19:26:00-06:00" pubdate data-updated="true">Mar 25<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/03/25/init-scripts//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/12/16/newznab-release-issue/">Newznab Release Issue</a></h1>
+	<div class="entry-content">
+		<p>When NZBMatrix was shut down I eventually came upon Newznab and installed it on my local server. After enabling a few groups I ran update_binaries.php and it seemed like it was working, but when I ran update_releases.php after update_binaries.php had finished it didn’t create any releases. The issue is the regex’s (or lack of) that come with the free version of Newznab. One easy fix for this is to donate to the project and get Newznab+. This includes the most up-to-date regex’s.</p>
+
+<p>If you want to just try out Newznab and want to get some releases on your site before you donate, you can do the following (this is a Linux example):</p>
+
+<pre><code>cd /tmp
+wget https://raw.github.com/kop1/newznab/master/db/latestregex.sql
+mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
+</code></pre>
+
+<p>That will update your regex&#8217;s so update_releases.php will create some releases. If you&#8217;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&#8217;re directly supporting the people who work on it.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-16T10:46:00-07:00" pubdate data-updated="true">Dec 16<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/newznab/'>newznab</a>, <a class='category' href='/blog/categories/usenet/'>usenet</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/12/16/newznab-release-issue//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/12/08/paul-grahams-essays/">Paul Graham&#8217;s Essays</a></h1>
+	<div class="entry-content">
+		<p>Paul Graham has a ton of great essays on his <a href="http://paulgraham.com/articles.html">website</a> to do with startups, programming, and being an entrepreneur. I&#8217;ve read quite a few of them in the past and they&#8217;re all really insightful and give great advice.</p>
+
+<p>The latest one I read was <a href="http://paulgraham.com/head.html">Holding a Program in One&#8217;s Head</a>. It gives some awesome advice for programmers.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-08T16:19:00-07:00" pubdate data-updated="true">Dec 8<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/essays/'>essays</a>, <a class='category' href='/blog/categories/paul-graham/'>paul graham</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/12/08/paul-grahams-essays//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/12/02/commit-messages/">Commit Messages</a></h1>
+	<div class="entry-content">
+		<p>I get really frustrated when I see a commit message that doesn’t adequately explain what the author did and why he did it. Commit messages are really important. They’re the only source of information on why a change was made. If a change introduced a bug, a commit message can help explain why the author made that change, and will help shed some light on what functionality the author expected to change. This can be extremely helpful when trying to figure out what commit introduced that bug. You need to be able to use those commit messages (especially the header line) to quickly cross-reference the issue you’re seeing to help narrow down what change caused the issue.</p>
+
+<p>In addition, if you’re working with other developers on the same repository, your commit messages will help them understand what you’re working on and why you’re making the changes you’re making. Commit messages are a great way to share knowledge about the inner workings of a code base. Your own understanding of the code you wrote will never be better than when you’re writing its commit message (as long as you commit often!).</p>
+
+<p>Writing detailed commit messages can also help you review your own code. I can’t count how many times I was writing a commit message, and while going over the diff making sure I didn’t forget anything, I saw something I either didn’t mean to include (maybe a random debug log to figure out why something wasn’t working) or something I could refactor. Writing detailed commit messages has been extremely helpful in making my own code better by forcing me to review the changes before I committed.</p>
+
+<p>I really like the way Linus Torvalds writes commit messages. He always provides a lot of detail about what he’s doing and why. They’re an awesome source of information. Without his detailed commit messages, looking years back into the history of the Linux kernel at one of his commits you’d spend significantly more time figuring out why the change was made.</p>
+
+<p>Here’s an excerpt from one of his projects (subsurface) on what he expects in a commit message.</p>
+
+<pre><code>A good commit message looks like this:
+
+Header line: explaining the commit in one line
+
+Body of commit message is a few lines of text, explaining things
+in more detail, possibly giving some background about the issue
+being fixed, etc etc.
+
+The body of the commit message can be several paragraphs, and
+please do proper word-wrap and keep columns shorter than about
+74 characters or so. That way "git log" will show things
+nicely even when it's indented.
+
+Reported-by: whoever-reported-it
+Signed-off-by: Your Name &lt;youremail@yourhost.com&gt;
+
+where that header line really should be meaningful, and really should be
+just one line.  That header line is what is shown by tools like gitk and
+shortlog, and should summarize the change in one readable line of text,
+independently of the longer explanation.
+</code></pre>
+
+<p>Please, when writing a commit message, take the above advice and make the message meaningful.</p>
+
+<p>Another rule you need to follow is to commit often. Commit every time you make a change that you could possibly want to roll back in the future. These changes can be big or small, but should only ever be one “thing”. If you renamed a class, make a commit. If you refactored a method in that class to make it faster, make a commit. Why can’t you commit the renaming of the class and the refactored method in the same commit? What if you later found out the refactoring of that method introduced a bug? Rolling back that commit will not only revert the changes you made to the method but will also change the name of the class back to its old name! That’s not something we want. Now we have to change the name of the class back to its new name after reverting the commit.</p>
+
+<p>That’s a simple example, but if you keep your commits to one “thing” you’ll save yourself the headache of having to re-implement changes after reverting a commit that included multiple changes.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-02T21:25:00-07:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/version-control/'>version control</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/12/02/commit-messages//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/11/22/mysql-memory-tables/">MySQL MEMORY Tables</a></h1>
+	<div class="entry-content">
+		<p>I&#8217;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
+
+<p>A memory table can be created in MySQL using the ENGINE table option:</p>
+
+<pre><code>CREATE TABLE t (i INT) ENGINE = MEMORY;
+</code></pre>
+
+<p>TYPE = HEAP is an older way of specifying the same thing and is still supported for backwards compatibility. Memory tables use hash indexes by default so they’re very fast, and useful for creating temporary tables. When the server shuts down, the tables lose all of their values since they’re stored in memory, but the table definitions aren’t lost since they’re stored in .frm files on disk. These tables will exist when the server restarts but will be empty.</p>
+
+<ul>
+<li>These tables can have up to 64 indexes per table, with 16 columns per index and a maximum key length of 3072 bytes.</li>
+<li>They cannot contain BLOB or TEXT columns.</li>
+<li>The maximum size of a MEMORY table is dependent on the <code>max_heap_table_size</code> system variable, which is by default 16MB. In order to create MEMORY tables of different sizes this variable’s value must be changed. It’s best to change the session value of this variable instead of the global value, unless you want the value to be changed for all clients.</li>
+<li>Memory is not reclaimed when individual rows are deleted from MEMORY tables. It’s only reclaimed when the entire table is deleted.</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-22T18:41:00-07:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>mysql</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/11/22/mysql-memory-tables//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings/">Microsoft Exchangenge iOS Settings</a></h1>
+	<div class="entry-content">
+		<p>My company doesn’t officially support adding a Microsoft Exchange email/calendar account to your iOS device unless you install a certain application and certificate. I didn’t want to do this since it enables them to do a lot more than just enable email on my phone.</p>
+
+<p>We have Microsoft Exchange webmail accessible from anywhere so I eventually figured out the correct settings to use from the webmail URL to add a Microsoft Exchange account to my iOS devices that pushes my work email, address book, and calendar.</p>
+
+<p>Once I log in, our webmail URL looks something like this: https://subdomain.domain.com/owa</p>
+
+<p>The settings I used to add the Microsoft Exchange account to my iOS devices were:
+Server: subdomain.domain.com
+Domain: domain
+Username: same username as logging in to webmail (no domain required)
+Password: same password
+Use SSL: On</p>
+
+<p>Once I used those settings and clicked Done checkmarks appeared beside each form field and then the account was added. It took maybe 5-10 minutes before I could access my email and calendar (I got a couple error messages during that time). I think it was while emails were being downloaded.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-18T17:36:00-07:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/email/'>email</a>, <a class='category' href='/blog/categories/exchange/'>exchange</a>, <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests/">RP-PPPoE &amp; Pppd - LCP: Timeout Sending Config-Requests</a></h1>
+	<div class="entry-content">
+		<p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&#8217;ll call &#8216;server&#8217;).</p>
+
+<p>Whenever I tried to connect to the server from a client, I would see the following in /var/log/messages on the server:</p>
+
+<pre><code>pppd[22137]: pppd 2.4.4 started by root, uid 0
+pppd[22137]: Using interface ppp0
+pppd[22137]: Connect: ppp0 &lt;--&gt; /dev/pts/1
+pppd[22137]: LCP: timeout sending Config-Requests 
+pppd[22137]: Connection terminated.
+pppd[22137]: Modem hangup
+pppoe[22140]: Timeout waiting for PADO packets
+pppd[22137]: Exit.
+</code></pre>
+
+<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&#8217;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
+
+<pre><code>sudo /etc/init.d/syslog stop
+</code></pre>
+
+<p>I had authentiation and most other options disabled on RP-PPPoE as I was just trying to get the server and client connected, and lo-and-behold, the client connected right away! This was really weird, since what does syslog have to do with RP-PPPoE and why would it stop the connection from working?</p>
+
+<p>I did a bunch of searching, and found the following two posts:</p>
+
+<p><a href="http://marc.info/?l=linux-ppp&amp;m=118661751530643">pppd and rp-pppoe LCP timeout issues</a></p>
+
+<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 - ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
+
+<p>If you look through them, you&#8217;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&#8217;re using with <code>pppd --version</code>.</p>
+
+<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&#8217;s the patch that&#8217;s included in the second post:</p>
+
+<pre><code>--- ppp-2.4.4/pppd/main.c.orig 2006-06-04 07:52:50.000000000 +0400
++++ ppp-2.4.4/pppd/main.c 2007-11-09 14:47:20.000000000 +0300
+@@ -1567,6 +1567,8 @@
+if (errfd == 0 || errfd == 1)
+errfd = dup(errfd);
+
++ closelog();
++
+/* dup the in, out, err fds to 0, 1, 2 */
+if (infd != 0)
+dup2(infd, 0);
+@@ -1575,7 +1577,6 @@
+if (errfd != 2)
+dup2(errfd, 2);
+
+- closelog();
+if (log_to_fd &gt; 2)
+close(log_to_fd);
+if (the_channel-&gt;close)
+</code></pre>
+
+<p>As you can see, the patch just relocates the function call a few lines up. What I decided to do was download the latest version of pppd, ensure the patch was already applied, and install it overtop of pppd 2.4.4 already on the system. I downloaded the latest version (2.4.5) from <a href="ftp://ftp.samba.org/pub/ppp/">here</a>, inspected main.c to make sure the patch was already applied (which it was), and followed the installation instructions to install it.</p>
+
+<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&#8217;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
+
+<pre><code>pppd[4075]: pppd 2.4.5 started by root, uid 0
+pppd[4075]: Using interface ppp0
+pppd[4075]: Connect: ppp0 &lt;--&gt; /dev/pts/1
+pppd[4075]: local  IP address 10.0.0.1
+pppd[4075]: remote IP address 10.67.15.1
+</code></pre>
+
+<p>After I got rid of that bug, I started turning features back on (such as authentication), and everything worked.</p>
+
+<p>The two main tutorials I read to actually set up RP-PPPoE were:</p>
+
+<p><a href="http://darmawan-salihun.blogspot.ca/2008/12/setting-up-basic-pppoe-server-in-linux.html">Setting-up Basic PPPoE Server in Linux (x86_64 Platform)</a></p>
+
+<p><a href="http://www.howtodoityourself.org/2010/12/01/pppoe-server-how-to-do-it-yourself.html">PPPoE Server – How To Do It Yourself</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-06T19:34:00-06:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/pppoe/'>pppoe</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/09/01/virtualbox-shared-folders/">VirtualBox Shared Folders</a></h1>
+	<div class="entry-content">
+		<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&#8217;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&#8217;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
+
+<pre><code>/sbin/mount.vboxsf: mounting failed with the error: No such Device
+</code></pre>
+
+<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&#8217;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&#8217;t</strong> see vboxsf.</p>
+
+<p>In order to build the modules necessary for shared folders, the following three packages need to be installed before running the Guest Additions installation script:</p>
+
+<pre><code>sudo apt-get install dkms build-essential linux-headers-generic      
+</code></pre>
+
+<p>After that, I re-ran the Guest Additions script by connecting the VBoxGuestAdditions.iso as a storage device (using phpvirtualbox), mounting the device at /dev/scd0, and running the script:</p>
+
+<pre><code>sudo mount /dev/scd0 /media/cdrom
+cd /media/cdrom
+./VBoxLinuxAdditions.run
+</code></pre>
+
+<p>Once that had completed, I restarted and ran <code>ls mod | grep vbox</code>. You <strong>should</strong> see see vboxsf.</p>
+
+<p>One that&#8217;s done, you should be able to mount your shared folders, like so:</p>
+
+<pre><code>mount -t vboxsf -o uid=1000,gid=1000 d /media/sf_d
+</code></pre>
+
+<p>I put one of those commands for each of my shared folders in /etc/rc.local. Make sure you create the sf_d folder in /media before trying to mount it there, and change uid and gid to the user you want the mount to be mounted under.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-01T10:05:00-06:00" pubdate data-updated="true">Sep 1<span>st</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/virtualbox/'>virtualbox</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/09/01/virtualbox-shared-folders//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/08/24/steve-jobs/">Steve Jobs</a></h1>
+	<div class="entry-content">
+		<p>One year ago today, Steve Jobs resigned as CEO of Apple.</p>
+
+<p>One of my favourite keynotes to watch is the original introduction of the iPhone. Right around the 29 minute mark gives me chills. You can download it on iTunes and I think you should, even if you don&#8217;t want to watch it right away. It&#8217;s an iconic event and it would be a shame to not have it if it&#8217;s ever taken off of iTunes.</p>
+
+<p>Download it <a href="http://itunes.apple.com/ca/podcast/apple-keynotes/id275834665">here</a>.</p>
+
+<p>His keynotes were special. I&#8217;ll miss them.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-24T23:17:00-06:00" pubdate data-updated="true">Aug 24<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/steve-jobs/'>Steve Jobs</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/08/24/steve-jobs//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/02/21/interview-questions/">Interview Questions</a></h1>
+	<div class="entry-content">
+		<p>You should know the answer to all of these questions before going into an interview. They aren&#8217;t difficult questions, but knowing the answers beforehand will certainly reduce stress while you&#8217;re in the interview trying to come up with an answer.</p>
+
+<ol>
+<li>Why do you want to work for us?</li>
+<li>How do you think you could contribute to our company?</li>
+<li>What kind of work do you like best?</li>
+<li>Do you work well with others?</li>
+<li>What are your hobbies?</li>
+<li>What would you like to do when you graduate?</li>
+<li>Are you good at taking direction?</li>
+<li>Are you good at giving direction?</li>
+<li>Are you good at multitasking, or do you prefer to focus on one thing?</li>
+<li>Do you like to be busy?</li>
+<li>What would you like to learn if you worked for us?</li>
+<li>What do you do in your spare time?</li>
+<li>What would you do if you disagreed with your boss?</li>
+<li>What would you do if you had a conflict with a co-worker?</li>
+<li>Are you comfortable talking about your ideas?</li>
+<li>Are you comfortable talking in front of a group?</li>
+</ol>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-21T07:51:00-07:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/interviews/'>interviews</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/02/21/interview-questions//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+<nav id="pagenavi">
+    
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    Thomas Hewton-Waters
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'thomashw';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-33170140-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

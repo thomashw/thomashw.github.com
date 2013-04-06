@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mysql | thomashw]]></title>
+  <link href="http://thomashw.github.com/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://thomashw.github.com/"/>
+  <updated>2013-03-25T19:28:13-06:00</updated>
+  <id>http://thomashw.github.com/</id>
+  <author>
+    <name><![CDATA[Thomas Hewton-Waters]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL MEMORY Tables]]></title>
+    <link href="http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables/"/>
+    <updated>2012-11-22T18:41:00-07:00</updated>
+    <id>http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables</id>
+    <content type="html"><![CDATA[<p>I've been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
+
+<p>A memory table can be created in MySQL using the ENGINE table option:</p>
+
+<pre><code>CREATE TABLE t (i INT) ENGINE = MEMORY;
+</code></pre>
+
+<p>TYPE = HEAP is an older way of specifying the same thing and is still supported for backwards compatibility. Memory tables use hash indexes by default so they’re very fast, and useful for creating temporary tables. When the server shuts down, the tables lose all of their values since they’re stored in memory, but the table definitions aren’t lost since they’re stored in .frm files on disk. These tables will exist when the server restarts but will be empty.</p>
+
+<ul>
+<li>These tables can have up to 64 indexes per table, with 16 columns per index and a maximum key length of 3072 bytes.</li>
+<li>They cannot contain BLOB or TEXT columns.</li>
+<li>The maximum size of a MEMORY table is dependent on the <code>max_heap_table_size</code> system variable, which is by default 16MB. In order to create MEMORY tables of different sizes this variable’s value must be changed. It’s best to change the session value of this variable instead of the global value, unless you want the value to be changed for all clients.</li>
+<li>Memory is not reclaimed when individual rows are deleted from MEMORY tables. It’s only reclaimed when the entire table is deleted.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
