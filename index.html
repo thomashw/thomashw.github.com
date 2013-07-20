@@ -7,7 +7,7 @@
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="I received a phone call from my Mom yesterday because she was having difficulty joining a Wifi network at a hotel using her iPad. She said she was &hellip;">
+	<meta name="description" content="The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,6 +86,83 @@
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/07/20/rounded-corner-text-inputs/">Rounded Corner Text Inputs</a></h1>
+	<div class="entry-content">
+		<p>The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its background.</p>
+
+<p>Here&#8217;s the background I&#8217;m using:</p>
+
+<p align="center">
+  <img src="images/search_bg.png" />
+</p>
+
+
+<p>Here&#8217;s the HTML.</p>
+
+<pre><code>&lt;div id="search"&gt;
+  &lt;form method="POST" action="#" accept-charset="UTF-8"&gt;
+    &lt;input class="search" type="text"&gt;      
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>And the CSS.</p>
+
+<pre><code>#search {
+    width: 362px;
+    height: 41px;
+    background: url('/images/search_bg.png') no-repeat left top;
+    line-height: 41px;
+    margin: 10px auto 10px auto;
+    text-align: center;
+}
+
+.search {
+    border: none;
+    text-align: center;
+    outline-width: 0;
+}
+</code></pre>
+
+<p>The <code>line-height</code> property sets the line-height to the same height as the div height. This has the effect of vertically centering the input (and hence the text) in the div.</p>
+
+<p>The <code>border</code> property is the one that makes the default text input&#8217;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
+
+<p>The <code>margin</code> property is used to add a 10px margin to the top and bottom of the div. The <code>auto</code> attributes are used to center the div (and hence the input) in the middle of the page.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-20T12:02:00-06:00" pubdate data-updated="true">Jul 20<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/html/'>html</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/07/20/rounded-corner-text-inputs//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -581,69 +658,6 @@ pppd[4075]: remote IP address 10.67.15.1
 </div>
 	
 		<span class="comments"><a href="/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/09/01/virtualbox-shared-folders/">VirtualBox Shared Folders</a></h1>
-	<div class="entry-content">
-		<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&#8217;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&#8217;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
-
-<pre><code>/sbin/mount.vboxsf: mounting failed with the error: No such Device
-</code></pre>
-
-<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&#8217;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&#8217;t</strong> see vboxsf.</p>
-
-<p>In order to build the modules necessary for shared folders, the following three packages need to be installed before running the Guest Additions installation script:</p>
-
-<pre><code>sudo apt-get install dkms build-essential linux-headers-generic      
-</code></pre>
-
-<p>After that, I re-ran the Guest Additions script by connecting the VBoxGuestAdditions.iso as a storage device (using phpvirtualbox), mounting the device at /dev/scd0, and running the script:</p>
-
-<pre><code>sudo mount /dev/scd0 /media/cdrom
-cd /media/cdrom
-./VBoxLinuxAdditions.run
-</code></pre>
-
-<p>Once that had completed, I restarted and ran <code>ls mod | grep vbox</code>. You <strong>should</strong> see see vboxsf.</p>
-
-<p>One that&#8217;s done, you should be able to mount your shared folders, like so:</p>
-
-<pre><code>mount -t vboxsf -o uid=1000,gid=1000 d /media/sf_d
-</code></pre>
-
-<p>I put one of those commands for each of my shared folders in /etc/rc.local. Make sure you create the sf_d folder in /media before trying to mount it there, and change uid and gid to the user you want the mount to be mounted under.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-01T10:05:00-06:00" pubdate data-updated="true">Sep 1<span>st</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/virtualbox/'>virtualbox</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/09/01/virtualbox-shared-folders//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
