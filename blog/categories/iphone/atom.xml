@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iphone | thomashw]]></title>
+  <link href="http://thomashw.github.com/blog/categories/iphone/atom.xml" rel="self"/>
+  <link href="http://thomashw.github.com/"/>
+  <updated>2013-05-25T09:09:22-06:00</updated>
+  <id>http://thomashw.github.com/</id>
+  <author>
+    <name><![CDATA[Thomas Hewton-Waters]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[iPad &amp; iPhone Wifi UX]]></title>
+    <link href="http://thomashw.github.com/blog/2013/05/25/ipad-and-iphone-wifi-ux/"/>
+    <updated>2013-05-25T08:50:00-06:00</updated>
+    <id>http://thomashw.github.com/blog/2013/05/25/ipad-and-iphone-wifi-ux</id>
+    <content type="html"><![CDATA[<p>I received a phone call from my Mom yesterday because she was having difficulty joining a Wifi network at a hotel using her iPad. She said she was going into the Wifi settings, tapping the network she wanted to join, but then it would say "DHCP" and list a bunch of entries like "IP Address" and "Subnet Mask" and she didn't know what to do.</p>
+
+<p>After thinking for a few seconds I realized she was tapping the blue arrow at the right of the Wifi network instead of tapping elsewhere in the row. Tapping the blue arrow takes you to details of your connection while tapping elsewhere will simply try to join the network.</p>
+
+<p align="center">
+  <img src="images/iphone_wifi.png" />
+</p>
+
+
+<p>I looked up Apple's support document for joining a Wifi network and it doesn't tell you where you should be tapping, just that you should click the network you want to join. So in her case it wouldn't have helped.</p>
+
+<p>My point is, things like this aren't completely obvious so you need to be careful when deciding how to make things work.</p>
+]]></content>
+  </entry>
+  
+</feed>
