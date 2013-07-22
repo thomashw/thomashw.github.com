@@ -4,7 +4,7 @@
   <title><![CDATA[thomashw]]></title>
   <link href="http://thomashw.github.com/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-20T12:53:03-06:00</updated>
+  <updated>2013-07-22T11:01:01-06:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Styling a horizontal rule]]></title>
+    <link href="http://thomashw.github.com/blog/2013/07/22/styling-a-horizontal-rule/"/>
+    <updated>2013-07-22T10:54:00-06:00</updated>
+    <id>http://thomashw.github.com/blog/2013/07/22/styling-a-horizontal-rule</id>
+    <content type="html"><![CDATA[<p>Up until recently I didn&#8217;t realize you could style horizontal rules (<code>&lt;hr /&gt;</code>). Of course you could use a div to do the same thing, but using a horizontal rule for its intended use is nice (and easier than using a div).</p>
+
+<p>Here&#8217;s the CSS I used most recently on a website I&#8217;m making to customize the horizontal rule.</p>
+
+<pre><code>hr {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: #000;
+    opacity: 0.2;
+}
+</code></pre>
+
+<p>Of course you can also name the style and apply it to the horizontal rule.</p>
+
+<pre><code>// CSS
+hr.custom {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: #000;
+    opacity: 0.2;
+}
+
+// HTML
+&lt;hr class="custom" /&gt;
+</code></pre>
+
+<p>You can also do things like gradients, blurs, etc.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rounded corner text inputs]]></title>
