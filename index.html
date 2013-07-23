@@ -7,7 +7,7 @@
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="Up until recently I didn&#8217;t realize you could style horizontal rules (&lt;hr /&gt;). Of course you could use a div to do the same thing, but &hellip;">
+	<meta name="description" content="I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&#8217;t able to scale &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,6 +86,47 @@
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac/">Adjust Screen Size in Remote Desktop Connection for Mac</a></h1>
+	<div class="entry-content">
+		<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&#8217;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
+
+<p>One way to adjust the size of the screen is to edit the .rdp file. To do this, in the RDC file menu when your session is active click Save As and save the .rdp file somewhere on your system. Then exit the active session and open the .rdp file in your favorite text editor (I used Sublime Text). Find the <strong>DesktopHeight</strong> and <strong>DesktopWidth</strong> labels. You can increase both but probably want to ensure they have the same ratio. The default was 1024x768 (a 4:3 ratio) so I increased them to 1440x1080 (still a 4:3 ratio).</p>
+
+<p>Then all you do is save the .rdp file, open it, and the new session should be at the new resolution.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-23T10:42:00-06:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/remote-desktop-connection/'>remote desktop connection</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -567,56 +608,6 @@ independently of the longer explanation.
 </div>
 	
 		<span class="comments"><a href="/blog/2012/11/22/mysql-memory-tables//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings/">Microsoft Exchangenge iOS Settings</a></h1>
-	<div class="entry-content">
-		<p>My company doesn’t officially support adding a Microsoft Exchange email/calendar account to your iOS device unless you install a certain application and certificate. I didn’t want to do this since it enables them to do a lot more than just enable email on my phone.</p>
-
-<p>We have Microsoft Exchange webmail accessible from anywhere so I eventually figured out the correct settings to use from the webmail URL to add a Microsoft Exchange account to my iOS devices that pushes my work email, address book, and calendar.</p>
-
-<p>Once I log in, our webmail URL looks something like this: https://subdomain.domain.com/owa</p>
-
-<p>The settings I used to add the Microsoft Exchange account to my iOS devices were:
-Server: subdomain.domain.com
-Domain: domain
-Username: same username as logging in to webmail (no domain required)
-Password: same password
-Use SSL: On</p>
-
-<p>Once I used those settings and clicked Done checkmarks appeared beside each form field and then the account was added. It took maybe 5-10 minutes before I could access my email and calendar (I got a couple error messages during that time). I think it was while emails were being downloaded.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-18T17:36:00-07:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/email/'>email</a>, <a class='category' href='/blog/categories/exchange/'>exchange</a>, <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/microsoft/'>microsoft</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
