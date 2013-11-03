@@ -4,7 +4,7 @@
   <title><![CDATA[thomashw]]></title>
   <link href="http://thomashw.github.com/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-05-25T09:09:22-06:00</updated>
+  <updated>2013-07-23T10:51:20-06:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -12,6 +12,105 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Adjust screen size in Remote Desktop Connection for Mac]]></title>
+    <link href="http://thomashw.github.com/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac/"/>
+    <updated>2013-07-23T10:42:00-06:00</updated>
+    <id>http://thomashw.github.com/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac</id>
+    <content type="html"><![CDATA[<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&#8217;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
+
+<p>One way to adjust the size of the screen is to edit the .rdp file. To do this, in the RDC file menu when your session is active click Save As and save the .rdp file somewhere on your system. Then exit the active session and open the .rdp file in your favorite text editor (I used Sublime Text). Find the <strong>DesktopHeight</strong> and <strong>DesktopWidth</strong> labels. You can increase both but probably want to ensure they have the same ratio. The default was 1024x768 (a 4:3 ratio) so I increased them to 1440x1080 (still a 4:3 ratio).</p>
+
+<p>Then all you do is save the .rdp file, open it, and the new session should be at the new resolution.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Styling a horizontal rule]]></title>
+    <link href="http://thomashw.github.com/blog/2013/07/22/styling-a-horizontal-rule/"/>
+    <updated>2013-07-22T10:54:00-06:00</updated>
+    <id>http://thomashw.github.com/blog/2013/07/22/styling-a-horizontal-rule</id>
+    <content type="html"><![CDATA[<p>Up until recently I didn&#8217;t realize you could style horizontal rules (<code>&lt;hr /&gt;</code>). Of course you could use a div to do the same thing, but using a horizontal rule for its intended use is nice (and easier than using a div).</p>
+
+<p>Here&#8217;s the CSS I used most recently on a website I&#8217;m making to customize the horizontal rule.</p>
+
+<pre><code>hr {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: #000;
+    opacity: 0.2;
+}
+</code></pre>
+
+<p>Of course you can also name the style and apply it to the horizontal rule.</p>
+
+<pre><code>// CSS
+hr.custom {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: #000;
+    opacity: 0.2;
+}
+
+// HTML
+&lt;hr class="custom" /&gt;
+</code></pre>
+
+<p>You can also do things like gradients, blurs, etc.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rounded corner text inputs]]></title>
+    <link href="http://thomashw.github.com/blog/2013/07/20/rounded-corner-text-inputs/"/>
+    <updated>2013-07-20T12:02:00-06:00</updated>
+    <id>http://thomashw.github.com/blog/2013/07/20/rounded-corner-text-inputs</id>
+    <content type="html"><![CDATA[<p>The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its background.</p>
+
+<p>Here&#8217;s the background I&#8217;m using:</p>
+
+<p align="center">
+  <img src="images/search_bg.png" />
+</p>
+
+
+<p>Here&#8217;s the HTML.</p>
+
+<pre><code>&lt;div id="search"&gt;
+  &lt;form method="POST" action="#" accept-charset="UTF-8"&gt;
+    &lt;input class="search" type="text"&gt;      
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>And the CSS.</p>
+
+<pre><code>#search {
+    width: 362px;
+    height: 41px;
+    background: url('/images/search_bg.png') no-repeat left top;
+    line-height: 41px;
+    margin: 10px auto 10px auto;
+    text-align: center;
+}
+
+.search {
+    border: none;
+    text-align: center;
+    outline-width: 0;
+}
+</code></pre>
+
+<p>The <code>line-height</code> property sets the line-height to the same height as the div height. This has the effect of vertically centering the input (and hence the text) in the div.</p>
+
+<p>The <code>border</code> property is the one that makes the default text input&#8217;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
+
+<p>The <code>margin</code> property is used to add a 10px margin to the top and bottom of the div. The <code>auto</code> attributes are used to center the div (and hence the input) in the middle of the page.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iPad &amp; iPhone Wifi UX]]></title>

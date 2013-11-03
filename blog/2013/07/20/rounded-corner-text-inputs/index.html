@@ -1,0 +1,225 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rounded corner text inputs - thomashw</title>
+	<meta name="author" content="Thomas Hewton-Waters">
+
+	
+	<meta name="description" content="The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="thomashw" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">thomashw</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:thomashw.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/thomashw" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/thomashw" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:thomashw.github.com">
+	</form>
+</nav>
+
+</header>
+	
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/thomashw">thomashw</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('thomashw', 4, false);
+	})(jQuery);
+</script>
+
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Rounded Corner Text Inputs</h1>
+	<div class="entry-content"><p>The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its background.</p>
+
+<p>Here&#8217;s the background I&#8217;m using:</p>
+
+<p align="center">
+  <img src="images/search_bg.png" />
+</p>
+
+
+<p>Here&#8217;s the HTML.</p>
+
+<pre><code>&lt;div id="search"&gt;
+  &lt;form method="POST" action="#" accept-charset="UTF-8"&gt;
+    &lt;input class="search" type="text"&gt;      
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>And the CSS.</p>
+
+<pre><code>#search {
+    width: 362px;
+    height: 41px;
+    background: url('/images/search_bg.png') no-repeat left top;
+    line-height: 41px;
+    margin: 10px auto 10px auto;
+    text-align: center;
+}
+
+.search {
+    border: none;
+    text-align: center;
+    outline-width: 0;
+}
+</code></pre>
+
+<p>The <code>line-height</code> property sets the line-height to the same height as the div height. This has the effect of vertically centering the input (and hence the text) in the div.</p>
+
+<p>The <code>border</code> property is the one that makes the default text input&#8217;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
+
+<p>The <code>margin</code> property is used to add a 10px margin to the top and bottom of the div. The <code>auto</code> attributes are used to center the div (and hence the input) in the middle of the page.</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-20T12:02:00-06:00" pubdate data-updated="true">Jul 20<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/html/'>html</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/07/20/rounded-corner-text-inputs/#disqus_thread">Comments</a></span>
+	
+</div></article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    Thomas Hewton-Waters
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'thomashw';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://thomashw.github.com/blog/2013/07/20/rounded-corner-text-inputs/';
+        var disqus_url = 'http://thomashw.github.com/blog/2013/07/20/rounded-corner-text-inputs/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-33170140-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
