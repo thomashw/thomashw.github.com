@@ -7,7 +7,7 @@
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&#8217;t able to scale &hellip;">
+	<meta name="description" content="Lately I’ve been testing an application I wrote that will perform firmware and configuration upgrades on a Cisco router and then reboot it once the &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -89,9 +89,52 @@
 
 
     <article class="post">
+	<h1 class="title"><a href="/blog/2013/11/03/killing-an-unresponsive-ssh-session/">Killing an Unresponsive SSH Session</a></h1>
+	<div class="entry-content">
+		<p>Lately I’ve been testing an application I wrote that will perform firmware and configuration upgrades on a Cisco router and then reboot it once the upgrade is done to apply the upgrade. These are being done over an SSH session, so when the router reboots my SSH session becomes unresponsive.</p>
+
+<p>Once this happens you can’t interact with the terminal session anymore because the SSH client catches all of the commands and since the SSH session is toast they don’t do anything. &lsquo;Ctrl + c&rsquo; doesn’t exit the session because of this.</p>
+
+<p>Previously I’d either just exit the terminal window and open a new one or wait until the connection came back. But recently I discovered there’s a command to exit the SSH session, which is <code>return</code> + <code>~</code> + <code>.</code></p>
+
+<p>That means you hit <em>return</em>, type tilda, and then type a period. This will exit the SSH session for you and let you continue working in the same terminal window.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-03T11:35:00-07:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ssh/'>ssh</a>, <a class='category' href='/blog/categories/terminal/'>terminal</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/11/03/killing-an-unresponsive-ssh-session//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
 	<h1 class="title"><a href="/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac/">Adjust Screen Size in Remote Desktop Connection for Mac</a></h1>
 	<div class="entry-content">
-		<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&#8217;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
+		<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&rsquo;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
 
 <p>One way to adjust the size of the screen is to edit the .rdp file. To do this, in the RDC file menu when your session is active click Save As and save the .rdp file somewhere on your system. Then exit the active session and open the .rdp file in your favorite text editor (I used Sublime Text). Find the <strong>DesktopHeight</strong> and <strong>DesktopWidth</strong> labels. You can increase both but probably want to ensure they have the same ratio. The default was 1024x768 (a 4:3 ratio) so I increased them to 1440x1080 (still a 4:3 ratio).</p>
 
@@ -132,9 +175,9 @@
     <article class="post">
 	<h1 class="title"><a href="/blog/2013/07/22/styling-a-horizontal-rule/">Styling a Horizontal Rule</a></h1>
 	<div class="entry-content">
-		<p>Up until recently I didn&#8217;t realize you could style horizontal rules (<code>&lt;hr /&gt;</code>). Of course you could use a div to do the same thing, but using a horizontal rule for its intended use is nice (and easier than using a div).</p>
+		<p>Up until recently I didn&rsquo;t realize you could style horizontal rules (<code>&lt;hr /&gt;</code>). Of course you could use a div to do the same thing, but using a horizontal rule for its intended use is nice (and easier than using a div).</p>
 
-<p>Here&#8217;s the CSS I used most recently on a website I&#8217;m making to customize the horizontal rule.</p>
+<p>Here&rsquo;s the CSS I used most recently on a website I&rsquo;m making to customize the horizontal rule.</p>
 
 <pre><code>hr {
     width: 90%;
@@ -199,14 +242,14 @@ hr.custom {
 	<div class="entry-content">
 		<p>The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its background.</p>
 
-<p>Here&#8217;s the background I&#8217;m using:</p>
+<p>Here&rsquo;s the background I&rsquo;m using:</p>
 
 <p align="center">
   <img src="images/search_bg.png" />
 </p>
 
 
-<p>Here&#8217;s the HTML.</p>
+<p>Here&rsquo;s the HTML.</p>
 
 <pre><code>&lt;div id="search"&gt;
   &lt;form method="POST" action="#" accept-charset="UTF-8"&gt;
@@ -235,7 +278,7 @@ hr.custom {
 
 <p>The <code>line-height</code> property sets the line-height to the same height as the div height. This has the effect of vertically centering the input (and hence the text) in the div.</p>
 
-<p>The <code>border</code> property is the one that makes the default text input&#8217;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
+<p>The <code>border</code> property is the one that makes the default text input&rsquo;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
 
 <p>The <code>margin</code> property is used to add a 10px margin to the top and bottom of the div. The <code>auto</code> attributes are used to center the div (and hence the input) in the middle of the page.</p>
 
@@ -274,7 +317,7 @@ hr.custom {
     <article class="post">
 	<h1 class="title"><a href="/blog/2013/05/25/ipad-and-iphone-wifi-ux/">iPad &amp; iPhone Wifi UX</a></h1>
 	<div class="entry-content">
-		<p>I received a phone call from my Mom yesterday because she was having difficulty joining a Wifi network at a hotel using her iPad. She said she was going into the Wifi settings, tapping the network she wanted to join, but then it would say &#8220;DHCP&#8221; and list a bunch of entries like &#8220;IP Address&#8221; and &#8220;Subnet Mask&#8221; and she didn&#8217;t know what to do.</p>
+		<p>I received a phone call from my Mom yesterday because she was having difficulty joining a Wifi network at a hotel using her iPad. She said she was going into the Wifi settings, tapping the network she wanted to join, but then it would say &ldquo;DHCP&rdquo; and list a bunch of entries like &ldquo;IP Address&rdquo; and &ldquo;Subnet Mask&rdquo; and she didn&rsquo;t know what to do.</p>
 
 <p>After thinking for a few seconds I realized she was tapping the blue arrow at the right of the Wifi network instead of tapping elsewhere in the row. Tapping the blue arrow takes you to details of your connection while tapping elsewhere will simply try to join the network.</p>
 
@@ -283,9 +326,9 @@ hr.custom {
 </p>
 
 
-<p>I looked up Apple&#8217;s support document for joining a Wifi network and it doesn&#8217;t tell you where you should be tapping, just that you should click the network you want to join. So in her case it wouldn&#8217;t have helped.</p>
+<p>I looked up Apple&rsquo;s support document for joining a Wifi network and it doesn&rsquo;t tell you where you should be tapping, just that you should click the network you want to join. So in her case it wouldn&rsquo;t have helped.</p>
 
-<p>My point is, things like this aren&#8217;t completely obvious so you need to be careful when deciding how to make things work.</p>
+<p>My point is, things like this aren&rsquo;t completely obvious so you need to be careful when deciding how to make things work.</p>
 
 		
 		
@@ -322,16 +365,16 @@ hr.custom {
     <article class="post">
 	<h1 class="title"><a href="/blog/2013/04/06/running/">Running</a></h1>
 	<div class="entry-content">
-		<p>This is a post I read on reddit. Pretty awesome so I thought I&#8217;d share.</p>
+		<p>This is a post I read on reddit. Pretty awesome so I thought I&rsquo;d share.</p>
 
 <blockquote><p>This is sort of how I started running too. When my life was falling apart and I thought nothing else could go right I started going to the gym to force myself into something social everday. Just to interact with people. Just to do SOMETHING.</p>
 
-<p>And then I started running. And then it started being about me. And that feeling. And the act. And how free it was. How independent. How strong. How I didn&#8217;t have to hold back anything like I did with the rest of the world. On the treadmill, on the trails, on the track, in my running shoes I was allowed to be raw anger and pain and frustration and loneliness and strength, too, because fuck the world that doesn&#8217;t think it takes strength to be alone.</p>
+<p>And then I started running. And then it started being about me. And that feeling. And the act. And how free it was. How independent. How strong. How I didn&rsquo;t have to hold back anything like I did with the rest of the world. On the treadmill, on the trails, on the track, in my running shoes I was allowed to be raw anger and pain and frustration and loneliness and strength, too, because fuck the world that doesn&rsquo;t think it takes strength to be alone.</p>
 
-<p>Fast forward six months - my first 5k. Six more - half marathon. A year - marathon. I&#8217;m still the only one I know who&#8217;s done it. I&#8217;m about to start training for the triathlon. And yeah, I like my body a lot better now, not so much because of the way it looks but because it is a powerful, independent, free extension of the strength I carry and I can show that any time.</p>
+<p>Fast forward six months &ndash; my first 5k. Six more &ndash; half marathon. A year &ndash; marathon. I&rsquo;m still the only one I know who&rsquo;s done it. I&rsquo;m about to start training for the triathlon. And yeah, I like my body a lot better now, not so much because of the way it looks but because it is a powerful, independent, free extension of the strength I carry and I can show that any time.</p>
 
-<p>So you, more power to you. Run. Run for as long as it makes you happy. There&#8217;s nothing like that first ten miler that you take in the middle of the night without your phone or telling anyone where you went and you think it&#8217;s never going to end and when you finally finish your legs are fucked for the next three days, but fuckitall if it wasn&#8217;t worth it.
-Running&#8217;s like that. Welcome to the family.</p></blockquote>
+<p>So you, more power to you. Run. Run for as long as it makes you happy. There&rsquo;s nothing like that first ten miler that you take in the middle of the night without your phone or telling anyone where you went and you think it&rsquo;s never going to end and when you finally finish your legs are fucked for the next three days, but fuckitall if it wasn&rsquo;t worth it.
+Running&rsquo;s like that. Welcome to the family.</p></blockquote>
 
 <p><a href="http://www.reddit.com/r/ForeverAlone/comments/1bs12o/working_out/c99imx6">Original Post</a></p>
 
@@ -414,7 +457,7 @@ wget https://raw.github.com/kop1/newznab/master/db/latestregex.sql
 mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
 </code></pre>
 
-<p>That will update your regex&#8217;s so update_releases.php will create some releases. If you&#8217;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&#8217;re directly supporting the people who work on it.</p>
+<p>That will update your regex&rsquo;s so update_releases.php will create some releases. If you&rsquo;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&rsquo;re directly supporting the people who work on it.</p>
 
 		
 		
@@ -451,9 +494,9 @@ mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
     <article class="post">
 	<h1 class="title"><a href="/blog/2012/12/08/paul-grahams-essays/">Paul Graham&#8217;s Essays</a></h1>
 	<div class="entry-content">
-		<p>Paul Graham has a ton of great essays on his <a href="http://paulgraham.com/articles.html">website</a> to do with startups, programming, and being an entrepreneur. I&#8217;ve read quite a few of them in the past and they&#8217;re all really insightful and give great advice.</p>
+		<p>Paul Graham has a ton of great essays on his <a href="http://paulgraham.com/articles.html">website</a> to do with startups, programming, and being an entrepreneur. I&rsquo;ve read quite a few of them in the past and they&rsquo;re all really insightful and give great advice.</p>
 
-<p>The latest one I read was <a href="http://paulgraham.com/head.html">Holding a Program in One&#8217;s Head</a>. It gives some awesome advice for programmers.</p>
+<p>The latest one I read was <a href="http://paulgraham.com/head.html">Holding a Program in One&rsquo;s Head</a>. It gives some awesome advice for programmers.</p>
 
 		
 		
@@ -556,58 +599,6 @@ independently of the longer explanation.
 </div>
 	
 		<span class="comments"><a href="/blog/2012/12/02/commit-messages//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/11/22/mysql-memory-tables/">MySQL MEMORY Tables</a></h1>
-	<div class="entry-content">
-		<p>I&#8217;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
-
-<p>A memory table can be created in MySQL using the ENGINE table option:</p>
-
-<pre><code>CREATE TABLE t (i INT) ENGINE = MEMORY;
-</code></pre>
-
-<p>TYPE = HEAP is an older way of specifying the same thing and is still supported for backwards compatibility. Memory tables use hash indexes by default so they’re very fast, and useful for creating temporary tables. When the server shuts down, the tables lose all of their values since they’re stored in memory, but the table definitions aren’t lost since they’re stored in .frm files on disk. These tables will exist when the server restarts but will be empty.</p>
-
-<ul>
-<li>These tables can have up to 64 indexes per table, with 16 columns per index and a maximum key length of 3072 bytes.</li>
-<li>They cannot contain BLOB or TEXT columns.</li>
-<li>The maximum size of a MEMORY table is dependent on the <code>max_heap_table_size</code> system variable, which is by default 16MB. In order to create MEMORY tables of different sizes this variable’s value must be changed. It’s best to change the session value of this variable instead of the global value, unless you want the value to be changed for all clients.</li>
-<li>Memory is not reclaimed when individual rows are deleted from MEMORY tables. It’s only reclaimed when the entire table is deleted.</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-22T18:41:00-07:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mysql/'>mysql</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/11/22/mysql-memory-tables//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -7,7 +7,7 @@
 	<meta name="author" content="Thomas Hewton-Waters">
 
 	
-	<meta name="description" content="My company doesn’t officially support adding a Microsoft Exchange email/calendar account to your iOS device unless you install a certain application &hellip;">
+	<meta name="description" content="I&rsquo;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down after I learn something has &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -89,13 +89,65 @@
 
 
     <article class="post">
+	<h1 class="title"><a href="/blog/2012/11/22/mysql-memory-tables/">MySQL MEMORY Tables</a></h1>
+	<div class="entry-content">
+		<p>I&rsquo;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
+
+<p>A memory table can be created in MySQL using the ENGINE table option:</p>
+
+<pre><code>CREATE TABLE t (i INT) ENGINE = MEMORY;
+</code></pre>
+
+<p>TYPE = HEAP is an older way of specifying the same thing and is still supported for backwards compatibility. Memory tables use hash indexes by default so they’re very fast, and useful for creating temporary tables. When the server shuts down, the tables lose all of their values since they’re stored in memory, but the table definitions aren’t lost since they’re stored in .frm files on disk. These tables will exist when the server restarts but will be empty.</p>
+
+<ul>
+<li>These tables can have up to 64 indexes per table, with 16 columns per index and a maximum key length of 3072 bytes.</li>
+<li>They cannot contain BLOB or TEXT columns.</li>
+<li>The maximum size of a MEMORY table is dependent on the <code>max_heap_table_size</code> system variable, which is by default 16MB. In order to create MEMORY tables of different sizes this variable’s value must be changed. It’s best to change the session value of this variable instead of the global value, unless you want the value to be changed for all clients.</li>
+<li>Memory is not reclaimed when individual rows are deleted from MEMORY tables. It’s only reclaimed when the entire table is deleted.</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-22T18:41:00-07:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>mysql</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/11/22/mysql-memory-tables//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
 	<h1 class="title"><a href="/blog/2012/11/18/microsoft-exchangenge-ios-settings/">Microsoft Exchangenge iOS Settings</a></h1>
 	<div class="entry-content">
 		<p>My company doesn’t officially support adding a Microsoft Exchange email/calendar account to your iOS device unless you install a certain application and certificate. I didn’t want to do this since it enables them to do a lot more than just enable email on my phone.</p>
 
 <p>We have Microsoft Exchange webmail accessible from anywhere so I eventually figured out the correct settings to use from the webmail URL to add a Microsoft Exchange account to my iOS devices that pushes my work email, address book, and calendar.</p>
 
-<p>Once I log in, our webmail URL looks something like this: https://subdomain.domain.com/owa</p>
+<p>Once I log in, our webmail URL looks something like this: <a href="https://subdomain.domain.com/owa">https://subdomain.domain.com/owa</a></p>
 
 <p>The settings I used to add the Microsoft Exchange account to my iOS devices were:
 Server: subdomain.domain.com
@@ -141,7 +193,7 @@ Use SSL: On</p>
     <article class="post">
 	<h1 class="title"><a href="/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests/">RP-PPPoE &amp; Pppd - LCP: Timeout Sending Config-Requests</a></h1>
 	<div class="entry-content">
-		<p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&#8217;ll call &#8216;server&#8217;).</p>
+		<p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&rsquo;ll call &lsquo;server&rsquo;).</p>
 
 <p>Whenever I tried to connect to the server from a client, I would see the following in /var/log/messages on the server:</p>
 
@@ -155,7 +207,7 @@ pppoe[22140]: Timeout waiting for PADO packets
 pppd[22137]: Exit.
 </code></pre>
 
-<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&#8217;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
+<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&rsquo;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
 
 <pre><code>sudo /etc/init.d/syslog stop
 </code></pre>
@@ -166,11 +218,11 @@ pppd[22137]: Exit.
 
 <p><a href="http://marc.info/?l=linux-ppp&amp;m=118661751530643">pppd and rp-pppoe LCP timeout issues</a></p>
 
-<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 - ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
+<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 &ndash; ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
 
-<p>If you look through them, you&#8217;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&#8217;re using with <code>pppd --version</code>.</p>
+<p>If you look through them, you&rsquo;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&rsquo;re using with <code>pppd --version</code>.</p>
 
-<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&#8217;s the patch that&#8217;s included in the second post:</p>
+<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&rsquo;s the patch that&rsquo;s included in the second post:</p>
 
 <pre><code>--- ppp-2.4.4/pppd/main.c.orig 2006-06-04 07:52:50.000000000 +0400
 +++ ppp-2.4.4/pppd/main.c 2007-11-09 14:47:20.000000000 +0300
@@ -195,7 +247,7 @@ if (the_channel-&gt;close)
 
 <p>As you can see, the patch just relocates the function call a few lines up. What I decided to do was download the latest version of pppd, ensure the patch was already applied, and install it overtop of pppd 2.4.4 already on the system. I downloaded the latest version (2.4.5) from <a href="ftp://ftp.samba.org/pub/ppp/">here</a>, inspected main.c to make sure the patch was already applied (which it was), and followed the installation instructions to install it.</p>
 
-<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&#8217;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
+<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&rsquo;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
 
 <pre><code>pppd[4075]: pppd 2.4.5 started by root, uid 0
 pppd[4075]: Using interface ppp0
@@ -247,12 +299,12 @@ pppd[4075]: remote IP address 10.67.15.1
     <article class="post">
 	<h1 class="title"><a href="/blog/2012/09/01/virtualbox-shared-folders/">VirtualBox Shared Folders</a></h1>
 	<div class="entry-content">
-		<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&#8217;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&#8217;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
+		<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&rsquo;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&rsquo;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
 
 <pre><code>/sbin/mount.vboxsf: mounting failed with the error: No such Device
 </code></pre>
 
-<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&#8217;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&#8217;t</strong> see vboxsf.</p>
+<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&rsquo;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&rsquo;t</strong> see vboxsf.</p>
 
 <p>In order to build the modules necessary for shared folders, the following three packages need to be installed before running the Guest Additions installation script:</p>
 
@@ -268,7 +320,7 @@ cd /media/cdrom
 
 <p>Once that had completed, I restarted and ran <code>ls mod | grep vbox</code>. You <strong>should</strong> see see vboxsf.</p>
 
-<p>One that&#8217;s done, you should be able to mount your shared folders, like so:</p>
+<p>One that&rsquo;s done, you should be able to mount your shared folders, like so:</p>
 
 <pre><code>mount -t vboxsf -o uid=1000,gid=1000 d /media/sf_d
 </code></pre>
@@ -312,11 +364,11 @@ cd /media/cdrom
 	<div class="entry-content">
 		<p>One year ago today, Steve Jobs resigned as CEO of Apple.</p>
 
-<p>One of my favourite keynotes to watch is the original introduction of the iPhone. Right around the 29 minute mark gives me chills. You can download it on iTunes and I think you should, even if you don&#8217;t want to watch it right away. It&#8217;s an iconic event and it would be a shame to not have it if it&#8217;s ever taken off of iTunes.</p>
+<p>One of my favourite keynotes to watch is the original introduction of the iPhone. Right around the 29 minute mark gives me chills. You can download it on iTunes and I think you should, even if you don&rsquo;t want to watch it right away. It&rsquo;s an iconic event and it would be a shame to not have it if it&rsquo;s ever taken off of iTunes.</p>
 
 <p>Download it <a href="http://itunes.apple.com/ca/podcast/apple-keynotes/id275834665">here</a>.</p>
 
-<p>His keynotes were special. I&#8217;ll miss them.</p>
+<p>His keynotes were special. I&rsquo;ll miss them.</p>
 
 		
 		
@@ -353,7 +405,7 @@ cd /media/cdrom
     <article class="post">
 	<h1 class="title"><a href="/blog/2012/02/21/interview-questions/">Interview Questions</a></h1>
 	<div class="entry-content">
-		<p>You should know the answer to all of these questions before going into an interview. They aren&#8217;t difficult questions, but knowing the answers beforehand will certainly reduce stress while you&#8217;re in the interview trying to come up with an answer.</p>
+		<p>You should know the answer to all of these questions before going into an interview. They aren&rsquo;t difficult questions, but knowing the answers beforehand will certainly reduce stress while you&rsquo;re in the interview trying to come up with an answer.</p>
 
 <ol>
 <li>Why do you want to work for us?</li>

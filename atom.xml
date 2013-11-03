@@ -4,7 +4,7 @@
   <title><![CDATA[thomashw]]></title>
   <link href="http://thomashw.github.com/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-23T10:51:20-06:00</updated>
+  <updated>2013-11-03T11:38:51-07:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -14,11 +14,26 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Killing an unresponsive SSH session]]></title>
+    <link href="http://thomashw.github.com/blog/2013/11/03/killing-an-unresponsive-ssh-session/"/>
+    <updated>2013-11-03T11:35:00-07:00</updated>
+    <id>http://thomashw.github.com/blog/2013/11/03/killing-an-unresponsive-ssh-session</id>
+    <content type="html"><![CDATA[<p>Lately I’ve been testing an application I wrote that will perform firmware and configuration upgrades on a Cisco router and then reboot it once the upgrade is done to apply the upgrade. These are being done over an SSH session, so when the router reboots my SSH session becomes unresponsive.</p>
+
+<p>Once this happens you can’t interact with the terminal session anymore because the SSH client catches all of the commands and since the SSH session is toast they don’t do anything. &lsquo;Ctrl + c&rsquo; doesn’t exit the session because of this.</p>
+
+<p>Previously I’d either just exit the terminal window and open a new one or wait until the connection came back. But recently I discovered there’s a command to exit the SSH session, which is <code>return</code> + <code>~</code> + <code>.</code></p>
+
+<p>That means you hit <em>return</em>, type tilda, and then type a period. This will exit the SSH session for you and let you continue working in the same terminal window.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Adjust screen size in Remote Desktop Connection for Mac]]></title>
     <link href="http://thomashw.github.com/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac/"/>
     <updated>2013-07-23T10:42:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac</id>
-    <content type="html"><![CDATA[<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&#8217;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
+    <content type="html"><![CDATA[<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&rsquo;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
 
 <p>One way to adjust the size of the screen is to edit the .rdp file. To do this, in the RDC file menu when your session is active click Save As and save the .rdp file somewhere on your system. Then exit the active session and open the .rdp file in your favorite text editor (I used Sublime Text). Find the <strong>DesktopHeight</strong> and <strong>DesktopWidth</strong> labels. You can increase both but probably want to ensure they have the same ratio. The default was 1024x768 (a 4:3 ratio) so I increased them to 1440x1080 (still a 4:3 ratio).</p>
 
@@ -31,9 +46,9 @@
     <link href="http://thomashw.github.com/blog/2013/07/22/styling-a-horizontal-rule/"/>
     <updated>2013-07-22T10:54:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2013/07/22/styling-a-horizontal-rule</id>
-    <content type="html"><![CDATA[<p>Up until recently I didn&#8217;t realize you could style horizontal rules (<code>&lt;hr /&gt;</code>). Of course you could use a div to do the same thing, but using a horizontal rule for its intended use is nice (and easier than using a div).</p>
+    <content type="html"><![CDATA[<p>Up until recently I didn&rsquo;t realize you could style horizontal rules (<code>&lt;hr /&gt;</code>). Of course you could use a div to do the same thing, but using a horizontal rule for its intended use is nice (and easier than using a div).</p>
 
-<p>Here&#8217;s the CSS I used most recently on a website I&#8217;m making to customize the horizontal rule.</p>
+<p>Here&rsquo;s the CSS I used most recently on a website I&rsquo;m making to customize the horizontal rule.</p>
 
 <pre><code>hr {
     width: 90%;
@@ -70,14 +85,14 @@ hr.custom {
     <id>http://thomashw.github.com/blog/2013/07/20/rounded-corner-text-inputs</id>
     <content type="html"><![CDATA[<p>The easiest way to create a custom text input on a form is to remove the default border of the input and place a custom image behind it as its background.</p>
 
-<p>Here&#8217;s the background I&#8217;m using:</p>
+<p>Here&rsquo;s the background I&rsquo;m using:</p>
 
 <p align="center">
   <img src="images/search_bg.png" />
 </p>
 
 
-<p>Here&#8217;s the HTML.</p>
+<p>Here&rsquo;s the HTML.</p>
 
 <pre><code>&lt;div id="search"&gt;
   &lt;form method="POST" action="#" accept-charset="UTF-8"&gt;
@@ -106,7 +121,7 @@ hr.custom {
 
 <p>The <code>line-height</code> property sets the line-height to the same height as the div height. This has the effect of vertically centering the input (and hence the text) in the div.</p>
 
-<p>The <code>border</code> property is the one that makes the default text input&#8217;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
+<p>The <code>border</code> property is the one that makes the default text input&rsquo;s background invisible, and then we set the background of the containing div to the image we created with the <code>background</code> property.</p>
 
 <p>The <code>margin</code> property is used to add a 10px margin to the top and bottom of the div. The <code>auto</code> attributes are used to center the div (and hence the input) in the middle of the page.</p>
 ]]></content>
@@ -117,7 +132,7 @@ hr.custom {
     <link href="http://thomashw.github.com/blog/2013/05/25/ipad-and-iphone-wifi-ux/"/>
     <updated>2013-05-25T08:50:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2013/05/25/ipad-and-iphone-wifi-ux</id>
-    <content type="html"><![CDATA[<p>I received a phone call from my Mom yesterday because she was having difficulty joining a Wifi network at a hotel using her iPad. She said she was going into the Wifi settings, tapping the network she wanted to join, but then it would say &#8220;DHCP&#8221; and list a bunch of entries like &#8220;IP Address&#8221; and &#8220;Subnet Mask&#8221; and she didn&#8217;t know what to do.</p>
+    <content type="html"><![CDATA[<p>I received a phone call from my Mom yesterday because she was having difficulty joining a Wifi network at a hotel using her iPad. She said she was going into the Wifi settings, tapping the network she wanted to join, but then it would say &ldquo;DHCP&rdquo; and list a bunch of entries like &ldquo;IP Address&rdquo; and &ldquo;Subnet Mask&rdquo; and she didn&rsquo;t know what to do.</p>
 
 <p>After thinking for a few seconds I realized she was tapping the blue arrow at the right of the Wifi network instead of tapping elsewhere in the row. Tapping the blue arrow takes you to details of your connection while tapping elsewhere will simply try to join the network.</p>
 
@@ -126,9 +141,9 @@ hr.custom {
 </p>
 
 
-<p>I looked up Apple&#8217;s support document for joining a Wifi network and it doesn&#8217;t tell you where you should be tapping, just that you should click the network you want to join. So in her case it wouldn&#8217;t have helped.</p>
+<p>I looked up Apple&rsquo;s support document for joining a Wifi network and it doesn&rsquo;t tell you where you should be tapping, just that you should click the network you want to join. So in her case it wouldn&rsquo;t have helped.</p>
 
-<p>My point is, things like this aren&#8217;t completely obvious so you need to be careful when deciding how to make things work.</p>
+<p>My point is, things like this aren&rsquo;t completely obvious so you need to be careful when deciding how to make things work.</p>
 ]]></content>
   </entry>
   
@@ -137,16 +152,16 @@ hr.custom {
     <link href="http://thomashw.github.com/blog/2013/04/06/running/"/>
     <updated>2013-04-06T16:56:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2013/04/06/running</id>
-    <content type="html"><![CDATA[<p>This is a post I read on reddit. Pretty awesome so I thought I&#8217;d share.</p>
+    <content type="html"><![CDATA[<p>This is a post I read on reddit. Pretty awesome so I thought I&rsquo;d share.</p>
 
 <blockquote><p>This is sort of how I started running too. When my life was falling apart and I thought nothing else could go right I started going to the gym to force myself into something social everday. Just to interact with people. Just to do SOMETHING.</p>
 
-<p>And then I started running. And then it started being about me. And that feeling. And the act. And how free it was. How independent. How strong. How I didn&#8217;t have to hold back anything like I did with the rest of the world. On the treadmill, on the trails, on the track, in my running shoes I was allowed to be raw anger and pain and frustration and loneliness and strength, too, because fuck the world that doesn&#8217;t think it takes strength to be alone.</p>
+<p>And then I started running. And then it started being about me. And that feeling. And the act. And how free it was. How independent. How strong. How I didn&rsquo;t have to hold back anything like I did with the rest of the world. On the treadmill, on the trails, on the track, in my running shoes I was allowed to be raw anger and pain and frustration and loneliness and strength, too, because fuck the world that doesn&rsquo;t think it takes strength to be alone.</p>
 
-<p>Fast forward six months - my first 5k. Six more - half marathon. A year - marathon. I&#8217;m still the only one I know who&#8217;s done it. I&#8217;m about to start training for the triathlon. And yeah, I like my body a lot better now, not so much because of the way it looks but because it is a powerful, independent, free extension of the strength I carry and I can show that any time.</p>
+<p>Fast forward six months &ndash; my first 5k. Six more &ndash; half marathon. A year &ndash; marathon. I&rsquo;m still the only one I know who&rsquo;s done it. I&rsquo;m about to start training for the triathlon. And yeah, I like my body a lot better now, not so much because of the way it looks but because it is a powerful, independent, free extension of the strength I carry and I can show that any time.</p>
 
-<p>So you, more power to you. Run. Run for as long as it makes you happy. There&#8217;s nothing like that first ten miler that you take in the middle of the night without your phone or telling anyone where you went and you think it&#8217;s never going to end and when you finally finish your legs are fucked for the next three days, but fuckitall if it wasn&#8217;t worth it.
-Running&#8217;s like that. Welcome to the family.</p></blockquote>
+<p>So you, more power to you. Run. Run for as long as it makes you happy. There&rsquo;s nothing like that first ten miler that you take in the middle of the night without your phone or telling anyone where you went and you think it&rsquo;s never going to end and when you finally finish your legs are fucked for the next three days, but fuckitall if it wasn&rsquo;t worth it.
+Running&rsquo;s like that. Welcome to the family.</p></blockquote>
 
 <p><a href="http://www.reddit.com/r/ForeverAlone/comments/1bs12o/working_out/c99imx6">Original Post</a></p>
 ]]></content>
@@ -177,7 +192,7 @@ wget https://raw.github.com/kop1/newznab/master/db/latestregex.sql
 mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
 </code></pre>
 
-<p>That will update your regex&#8217;s so update_releases.php will create some releases. If you&#8217;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&#8217;re directly supporting the people who work on it.</p>
+<p>That will update your regex&rsquo;s so update_releases.php will create some releases. If you&rsquo;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&rsquo;re directly supporting the people who work on it.</p>
 ]]></content>
   </entry>
   
@@ -186,9 +201,9 @@ mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
     <link href="http://thomashw.github.com/blog/2012/12/08/paul-grahams-essays/"/>
     <updated>2012-12-08T16:19:00-07:00</updated>
     <id>http://thomashw.github.com/blog/2012/12/08/paul-grahams-essays</id>
-    <content type="html"><![CDATA[<p>Paul Graham has a ton of great essays on his <a href="http://paulgraham.com/articles.html">website</a> to do with startups, programming, and being an entrepreneur. I&#8217;ve read quite a few of them in the past and they&#8217;re all really insightful and give great advice.</p>
+    <content type="html"><![CDATA[<p>Paul Graham has a ton of great essays on his <a href="http://paulgraham.com/articles.html">website</a> to do with startups, programming, and being an entrepreneur. I&rsquo;ve read quite a few of them in the past and they&rsquo;re all really insightful and give great advice.</p>
 
-<p>The latest one I read was <a href="http://paulgraham.com/head.html">Holding a Program in One&#8217;s Head</a>. It gives some awesome advice for programmers.</p>
+<p>The latest one I read was <a href="http://paulgraham.com/head.html">Holding a Program in One&rsquo;s Head</a>. It gives some awesome advice for programmers.</p>
 ]]></content>
   </entry>
   
@@ -242,7 +257,7 @@ independently of the longer explanation.
     <link href="http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables/"/>
     <updated>2012-11-22T18:41:00-07:00</updated>
     <id>http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
 
 <p>A memory table can be created in MySQL using the ENGINE table option:</p>
 
@@ -270,7 +285,7 @@ independently of the longer explanation.
 
 <p>We have Microsoft Exchange webmail accessible from anywhere so I eventually figured out the correct settings to use from the webmail URL to add a Microsoft Exchange account to my iOS devices that pushes my work email, address book, and calendar.</p>
 
-<p>Once I log in, our webmail URL looks something like this: https://subdomain.domain.com/owa</p>
+<p>Once I log in, our webmail URL looks something like this: <a href="https://subdomain.domain.com/owa">https://subdomain.domain.com/owa</a></p>
 
 <p>The settings I used to add the Microsoft Exchange account to my iOS devices were:
 Server: subdomain.domain.com
@@ -288,7 +303,7 @@ Use SSL: On</p>
     <link href="http://thomashw.github.com/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests/"/>
     <updated>2012-09-06T19:34:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2012/09/06/rp-pppoe-and-pppd-lcp-timeout-sending-config-requests</id>
-    <content type="html"><![CDATA[<p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&#8217;ll call &#8216;server&#8217;).</p>
+    <content type="html"><![CDATA[<p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&rsquo;ll call &lsquo;server&rsquo;).</p>
 
 <p>Whenever I tried to connect to the server from a client, I would see the following in /var/log/messages on the server:</p>
 
@@ -302,7 +317,7 @@ pppoe[22140]: Timeout waiting for PADO packets
 pppd[22137]: Exit.
 </code></pre>
 
-<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&#8217;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
+<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&rsquo;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
 
 <pre><code>sudo /etc/init.d/syslog stop
 </code></pre>
@@ -313,11 +328,11 @@ pppd[22137]: Exit.
 
 <p><a href="http://marc.info/?l=linux-ppp&amp;m=118661751530643">pppd and rp-pppoe LCP timeout issues</a></p>
 
-<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 - ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
+<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 &ndash; ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
 
-<p>If you look through them, you&#8217;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&#8217;re using with <code>pppd --version</code>.</p>
+<p>If you look through them, you&rsquo;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&rsquo;re using with <code>pppd --version</code>.</p>
 
-<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&#8217;s the patch that&#8217;s included in the second post:</p>
+<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&rsquo;s the patch that&rsquo;s included in the second post:</p>
 
 <pre><code>--- ppp-2.4.4/pppd/main.c.orig 2006-06-04 07:52:50.000000000 +0400
 +++ ppp-2.4.4/pppd/main.c 2007-11-09 14:47:20.000000000 +0300
@@ -342,7 +357,7 @@ if (the_channel-&gt;close)
 
 <p>As you can see, the patch just relocates the function call a few lines up. What I decided to do was download the latest version of pppd, ensure the patch was already applied, and install it overtop of pppd 2.4.4 already on the system. I downloaded the latest version (2.4.5) from <a href="ftp://ftp.samba.org/pub/ppp/">here</a>, inspected main.c to make sure the patch was already applied (which it was), and followed the installation instructions to install it.</p>
 
-<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&#8217;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
+<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&rsquo;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
 
 <pre><code>pppd[4075]: pppd 2.4.5 started by root, uid 0
 pppd[4075]: Using interface ppp0
@@ -366,12 +381,12 @@ pppd[4075]: remote IP address 10.67.15.1
     <link href="http://thomashw.github.com/blog/2012/09/01/virtualbox-shared-folders/"/>
     <updated>2012-09-01T10:05:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2012/09/01/virtualbox-shared-folders</id>
-    <content type="html"><![CDATA[<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&#8217;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&#8217;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
+    <content type="html"><![CDATA[<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&rsquo;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&rsquo;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
 
 <pre><code>/sbin/mount.vboxsf: mounting failed with the error: No such Device
 </code></pre>
 
-<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&#8217;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&#8217;t</strong> see vboxsf.</p>
+<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&rsquo;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&rsquo;t</strong> see vboxsf.</p>
 
 <p>In order to build the modules necessary for shared folders, the following three packages need to be installed before running the Guest Additions installation script:</p>
 
@@ -387,7 +402,7 @@ cd /media/cdrom
 
 <p>Once that had completed, I restarted and ran <code>ls mod | grep vbox</code>. You <strong>should</strong> see see vboxsf.</p>
 
-<p>One that&#8217;s done, you should be able to mount your shared folders, like so:</p>
+<p>One that&rsquo;s done, you should be able to mount your shared folders, like so:</p>
 
 <pre><code>mount -t vboxsf -o uid=1000,gid=1000 d /media/sf_d
 </code></pre>
@@ -403,11 +418,11 @@ cd /media/cdrom
     <id>http://thomashw.github.com/blog/2012/08/24/steve-jobs</id>
     <content type="html"><![CDATA[<p>One year ago today, Steve Jobs resigned as CEO of Apple.</p>
 
-<p>One of my favourite keynotes to watch is the original introduction of the iPhone. Right around the 29 minute mark gives me chills. You can download it on iTunes and I think you should, even if you don&#8217;t want to watch it right away. It&#8217;s an iconic event and it would be a shame to not have it if it&#8217;s ever taken off of iTunes.</p>
+<p>One of my favourite keynotes to watch is the original introduction of the iPhone. Right around the 29 minute mark gives me chills. You can download it on iTunes and I think you should, even if you don&rsquo;t want to watch it right away. It&rsquo;s an iconic event and it would be a shame to not have it if it&rsquo;s ever taken off of iTunes.</p>
 
 <p>Download it <a href="http://itunes.apple.com/ca/podcast/apple-keynotes/id275834665">here</a>.</p>
 
-<p>His keynotes were special. I&#8217;ll miss them.</p>
+<p>His keynotes were special. I&rsquo;ll miss them.</p>
 ]]></content>
   </entry>
   
@@ -416,7 +431,7 @@ cd /media/cdrom
     <link href="http://thomashw.github.com/blog/2012/02/21/interview-questions/"/>
     <updated>2012-02-21T07:51:00-07:00</updated>
     <id>http://thomashw.github.com/blog/2012/02/21/interview-questions</id>
-    <content type="html"><![CDATA[<p>You should know the answer to all of these questions before going into an interview. They aren&#8217;t difficult questions, but knowing the answers beforehand will certainly reduce stress while you&#8217;re in the interview trying to come up with an answer.</p>
+    <content type="html"><![CDATA[<p>You should know the answer to all of these questions before going into an interview. They aren&rsquo;t difficult questions, but knowing the answers beforehand will certainly reduce stress while you&rsquo;re in the interview trying to come up with an answer.</p>
 
 <ol>
 <li>Why do you want to work for us?</li>

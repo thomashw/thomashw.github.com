@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: terminal | thomashw]]></title>
+  <link href="http://thomashw.github.com/blog/categories/terminal/atom.xml" rel="self"/>
+  <link href="http://thomashw.github.com/"/>
+  <updated>2013-11-03T11:38:51-07:00</updated>
+  <id>http://thomashw.github.com/</id>
+  <author>
+    <name><![CDATA[Thomas Hewton-Waters]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Killing an unresponsive SSH session]]></title>
+    <link href="http://thomashw.github.com/blog/2013/11/03/killing-an-unresponsive-ssh-session/"/>
+    <updated>2013-11-03T11:35:00-07:00</updated>
+    <id>http://thomashw.github.com/blog/2013/11/03/killing-an-unresponsive-ssh-session</id>
+    <content type="html"><![CDATA[<p>Lately I’ve been testing an application I wrote that will perform firmware and configuration upgrades on a Cisco router and then reboot it once the upgrade is done to apply the upgrade. These are being done over an SSH session, so when the router reboots my SSH session becomes unresponsive.</p>
+
+<p>Once this happens you can’t interact with the terminal session anymore because the SSH client catches all of the commands and since the SSH session is toast they don’t do anything. &lsquo;Ctrl + c&rsquo; doesn’t exit the session because of this.</p>
+
+<p>Previously I’d either just exit the terminal window and open a new one or wait until the connection came back. But recently I discovered there’s a command to exit the SSH session, which is <code>return</code> + <code>~</code> + <code>.</code></p>
+
+<p>That means you hit <em>return</em>, type tilda, and then type a period. This will exit the SSH session for you and let you continue working in the same terminal window.</p>
+]]></content>
+  </entry>
+  
+</feed>

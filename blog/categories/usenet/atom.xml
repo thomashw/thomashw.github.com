@@ -4,7 +4,7 @@
   <title><![CDATA[Category: usenet | thomashw]]></title>
   <link href="http://thomashw.github.com/blog/categories/usenet/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-23T10:51:20-06:00</updated>
+  <updated>2013-11-03T11:38:51-07:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -27,7 +27,7 @@ wget https://raw.github.com/kop1/newznab/master/db/latestregex.sql
 mysql -u USERNAME -p DATABASENAME &lt; latestregex.sql
 </code></pre>
 
-<p>That will update your regex's so update_releases.php will create some releases. If you're happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you're directly supporting the people who work on it.</p>
+<p>That will update your regex&rsquo;s so update_releases.php will create some releases. If you&rsquo;re happy with Newznab I highly suggest donating and getting Newznab+. It comes with lots of improvements and you&rsquo;re directly supporting the people who work on it.</p>
 ]]></content>
   </entry>
   

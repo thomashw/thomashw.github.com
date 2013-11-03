@@ -87,7 +87,7 @@
 
 	<div id="content" class="inner"><article class="post">
 	<h1 class="title">RP-PPPoE &amp; Pppd - LCP: Timeout Sending Config-Requests</h1>
-	<div class="entry-content"><p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&#8217;ll call &#8216;server&#8217;).</p>
+	<div class="entry-content"><p>Recently I was installing RP-PPPoE 3.11 on CentOS 5.2 (Linux version 2.6). This will enable us to authenticate users connecting to our network through one of our computers (which I&rsquo;ll call &lsquo;server&rsquo;).</p>
 
 <p>Whenever I tried to connect to the server from a client, I would see the following in /var/log/messages on the server:</p>
 
@@ -101,7 +101,7 @@ pppoe[22140]: Timeout waiting for PADO packets
 pppd[22137]: Exit.
 </code></pre>
 
-<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&#8217;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
+<p>After doing a ton of digging, I finally read a tip to try disabling the syslog daemon. This tip didn&rsquo;t include why you would need to do this or what it had to do with RP-PPPoE, but I was running out of options so I gave it a try.</p>
 
 <pre><code>sudo /etc/init.d/syslog stop
 </code></pre>
@@ -112,11 +112,11 @@ pppd[22137]: Exit.
 
 <p><a href="http://marc.info/?l=linux-ppp&amp;m=118661751530643">pppd and rp-pppoe LCP timeout issues</a></p>
 
-<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 - ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
+<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=222295">Bug 222295 &ndash; ppp-2.4.3-6.2.1 conflict with syslog on pppoe-server.</a></p>
 
-<p>If you look through them, you&#8217;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&#8217;re using with <code>pppd --version</code>.</p>
+<p>If you look through them, you&rsquo;ll see it has to do with pppd version 2.4.4, which is the version running (as can be seen in the /var/log/messages log above). You can also test which version of pppd you&rsquo;re using with <code>pppd --version</code>.</p>
 
-<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&#8217;s the patch that&#8217;s included in the second post:</p>
+<p>The specific issue has to do with the placement of a <code>closelog()</code> function call in main.c. Here&rsquo;s the patch that&rsquo;s included in the second post:</p>
 
 <pre><code>--- ppp-2.4.4/pppd/main.c.orig 2006-06-04 07:52:50.000000000 +0400
 +++ ppp-2.4.4/pppd/main.c 2007-11-09 14:47:20.000000000 +0300
@@ -141,7 +141,7 @@ if (the_channel-&gt;close)
 
 <p>As you can see, the patch just relocates the function call a few lines up. What I decided to do was download the latest version of pppd, ensure the patch was already applied, and install it overtop of pppd 2.4.4 already on the system. I downloaded the latest version (2.4.5) from <a href="ftp://ftp.samba.org/pub/ppp/">here</a>, inspected main.c to make sure the patch was already applied (which it was), and followed the installation instructions to install it.</p>
 
-<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&#8217;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
+<p>Once I had 2.4.5 installed, I confirmed with <code>pppd --version</code>, ran the server and tried connecting with a client. I ended up needing to rebuild 2.4.5 after changing the install path in the configure script because it wasn&rsquo;t installing to the same directory as 2.4.4 and RP-PPPoE was still using 2.4.4. 2.4.4 was located in /usr/sbin, while the configure script configured 2.4.5 to install to /usr/local/sbin by default. After changing the configure script to install to /usr/sbin, RP-PPPoE used the correct version and the client connected without issue! The logs in /var/log/messages now look like this:</p>
 
 <pre><code>pppd[4075]: pppd 2.4.5 started by root, uid 0
 pppd[4075]: Using interface ppp0

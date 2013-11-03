@@ -4,7 +4,7 @@
   <title><![CDATA[Category: microsoft | thomashw]]></title>
   <link href="http://thomashw.github.com/blog/categories/microsoft/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-23T10:51:20-06:00</updated>
+  <updated>2013-11-03T11:38:51-07:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -22,7 +22,7 @@
 
 <p>We have Microsoft Exchange webmail accessible from anywhere so I eventually figured out the correct settings to use from the webmail URL to add a Microsoft Exchange account to my iOS devices that pushes my work email, address book, and calendar.</p>
 
-<p>Once I log in, our webmail URL looks something like this: https://subdomain.domain.com/owa</p>
+<p>Once I log in, our webmail URL looks something like this: <a href="https://subdomain.domain.com/owa">https://subdomain.domain.com/owa</a></p>
 
 <p>The settings I used to add the Microsoft Exchange account to my iOS devices were:
 Server: subdomain.domain.com

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: remote desktop connection | thomashw]]></title>
   <link href="http://thomashw.github.com/blog/categories/remote-desktop-connection/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-23T10:51:20-06:00</updated>
+  <updated>2013-11-03T11:38:51-07:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -18,7 +18,7 @@
     <link href="http://thomashw.github.com/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac/"/>
     <updated>2013-07-23T10:42:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2013/07/23/adjust-screen-size-in-remote-desktop-connection-for-mac</id>
-    <content type="html"><![CDATA[<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn't able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
+    <content type="html"><![CDATA[<p>I was recently using Remote Desktop Connection for Mac to remotely work on a Windows PC. One thing that bothered me was I wasn&rsquo;t able to scale the size of the screen. It was stuck at 1024x768, which was far too small for me to comfortably work.</p>
 
 <p>One way to adjust the size of the screen is to edit the .rdp file. To do this, in the RDC file menu when your session is active click Save As and save the .rdp file somewhere on your system. Then exit the active session and open the .rdp file in your favorite text editor (I used Sublime Text). Find the <strong>DesktopHeight</strong> and <strong>DesktopWidth</strong> labels. You can increase both but probably want to ensure they have the same ratio. The default was 1024x768 (a 4:3 ratio) so I increased them to 1440x1080 (still a 4:3 ratio).</p>
 

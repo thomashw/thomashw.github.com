@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mysql | thomashw]]></title>
   <link href="http://thomashw.github.com/blog/categories/mysql/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-23T10:51:20-06:00</updated>
+  <updated>2013-11-03T11:38:51-07:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -18,7 +18,7 @@
     <link href="http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables/"/>
     <updated>2012-11-22T18:41:00-07:00</updated>
     <id>http://thomashw.github.com/blog/2012/11/22/mysql-memory-tables</id>
-    <content type="html"><![CDATA[<p>I've been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been doing a bit of learning about MySQL lately at working. I have a horrible memory and writing things down <em>after</em> I learn something has always helped me to remember it.</p>
 
 <p>A memory table can be created in MySQL using the ENGINE table option:</p>
 

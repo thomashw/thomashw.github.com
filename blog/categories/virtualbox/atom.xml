@@ -4,7 +4,7 @@
   <title><![CDATA[Category: virtualbox | thomashw]]></title>
   <link href="http://thomashw.github.com/blog/categories/virtualbox/atom.xml" rel="self"/>
   <link href="http://thomashw.github.com/"/>
-  <updated>2013-07-23T10:51:20-06:00</updated>
+  <updated>2013-11-03T11:38:51-07:00</updated>
   <id>http://thomashw.github.com/</id>
   <author>
     <name><![CDATA[Thomas Hewton-Waters]]></name>
@@ -18,12 +18,12 @@
     <link href="http://thomashw.github.com/blog/2012/09/01/virtualbox-shared-folders/"/>
     <updated>2012-09-01T10:05:00-06:00</updated>
     <id>http://thomashw.github.com/blog/2012/09/01/virtualbox-shared-folders</id>
-    <content type="html"><![CDATA[<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn't get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox's site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
+    <content type="html"><![CDATA[<p>Last night I was trying to get shared folders working using VirtualBox. I have the host as Ubuntu 12.04 and a guest using Ubuntu 11.04. For the life of me I couldn&rsquo;t get them to work. I followed the instructions on installing the Linux Guest Additions from VirtualBox&rsquo;s site and set up shared folders the same way many tutorials/blogs suggested, but every time I went to mount the shared folder I would get this error:</p>
 
 <pre><code>/sbin/mount.vboxsf: mounting failed with the error: No such Device
 </code></pre>
 
-<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox's <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn't</strong> see vboxsf.</p>
+<p>I <em>finally</em> found a post explaining that the issue was the installation of modules while installing the Guest Additions. VirtualBox&rsquo;s <a href="http://www.virtualbox.org/manual/ch04.html#idp18411760">website</a> instructs to install <em>just</em> dkms before running the Guest Additions script, but this was incorrect. One indication that this is the issue is to run  <code>ls mod | grep vbox</code>. You <strong>shouldn&rsquo;t</strong> see vboxsf.</p>
 
 <p>In order to build the modules necessary for shared folders, the following three packages need to be installed before running the Guest Additions installation script:</p>
 
@@ -39,7 +39,7 @@ cd /media/cdrom
 
 <p>Once that had completed, I restarted and ran <code>ls mod | grep vbox</code>. You <strong>should</strong> see see vboxsf.</p>
 
-<p>One that's done, you should be able to mount your shared folders, like so:</p>
+<p>One that&rsquo;s done, you should be able to mount your shared folders, like so:</p>
 
 <pre><code>mount -t vboxsf -o uid=1000,gid=1000 d /media/sf_d
 </code></pre>
